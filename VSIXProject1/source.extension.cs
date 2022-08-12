@@ -11,7 +11,7 @@ namespace VSIXProject1
         public const string Name = "SnakeToCamelCase";
         public const string Description = @"Convert snake case convert to camel case ";
         public const string Language = "en-US";
-        public const string Version = "1.1";
+        public const string Version = "1.2";
         public const string Author = "Ali ihsan AKAY";
         public const string Tags = "";
     }

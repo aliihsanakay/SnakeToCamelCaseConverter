@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="VSIXProject1.54ae2c46-c1a2-4075-addd-b218725a6525" Version="1.1" Language="en-US" Publisher="Ali ihsan AKAY" />
+        <Identity Id="VSIXProject1.54ae2c46-c1a2-4075-addd-b218725a6525" Version="1.2" Language="en-US" Publisher="Ali ihsan AKAY" />
         <DisplayName>SnakeToCamelCase</DisplayName>
         <Description xml:space="preserve">Convert snake case convert to camel case </Description>
         <Icon>Resources\Icon.png</Icon>
