@@ -32,12 +32,19 @@ namespace VSIXProject1
             try
             {
                 var splitText = text.Split('\n');
-
+                var propAspect = "";
+                bool addProp = false;
                 foreach (var item in splitText)
                 {
                     if (!string.IsNullOrWhiteSpace(item))
                     {
                         var prop = Regex.Replace(item.Trim(), @"\s+", "");
+                        if (prop[0] == '[')
+                        {
+                            propAspect = prop;
+                            addProp = true;
+                            continue;
+                        }
                         var clearGetSet = prop.Replace("{get;set;}", "").Replace("DateTime", "datetime");
                         var lasSpace = clearGetSet.IndexOfAny(UpperCaseChars);
                         var propName = clearGetSet.Substring(lasSpace, clearGetSet.Length - lasSpace);
@@ -65,8 +72,9 @@ namespace VSIXProject1
                             isFirst = false;
                         }
                         propType = propType.Replace("datetime", "DateTime").Replace("datetime?", "DateTime?");
-                        var yeniSnakeCaseProp = "public " + propType + " " + yeniProp + " {get;set;}";
-                        newClass.AppendLine(yeniSnakeCaseProp);
+                        var newSnakeCaseProp = (addProp ? $"{propAspect}\n" : "") + "public " + propType + " " + yeniProp + " {get;set;}";
+                        newClass.AppendLine(newSnakeCaseProp);
+                        addProp = false;
 
 
                     }
